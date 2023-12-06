@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="aura_list_view" model="ir.ui.view">
+        <field name="name">aura.list.view</field>
+        <field name="model">aura.profile</field>
+        <field name="arch" type="xml">
+        
+            <tree>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="description"/>
+                <field name="date"/>
+                <field name="price"/>
+            </tree>
+            
+        </field>
+    </record>
+
+    <record id="aura_form_view" model="ir.ui.view">
+        <field name="name">aura.form.view</field>
+        <field name="model">aura.profile</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="description"/>
+                <field name="date"/>
+                <field name="price"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="action_aura_profile" model="ir.actions.act_window">
+        <field name="name">Aura Member Profile</field>
+        <field name="res_model">aura.profile</field>
+        <field name="view_mode">tree,form</field> 
+    </record>
+
+    <menuitem id="aura_root_menu" name="Aura"/> 
+    <menuitem id="aura_sub_menu" name="Aura Profile" parent="aura_root_menu"/> 
+    <menuitem id="aura_profile_menu" name="Profile" action="action_aura_profile" parent="aura_sub_menu"/>
+</odoo>
