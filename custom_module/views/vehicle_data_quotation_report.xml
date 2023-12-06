@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="inherit_report_saleorder_document" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@id = 'informations']/div[4]" position="after">
+            <div t-if="doc.vehicle_part_number" class="col-auto col-3 mw-100 mb-2">
+                <strong>Vehicle Part Number:</strong>
+                <p class="m-0" t-field="doc.vehicle_part_number"/>
+            </div>
+            <div t-if="doc.vehicle_chassis_number" class="col-auto col-3 mw-100 mb-2">
+                <strong>License Number:</strong>
+                <p class="m-0" t-field="doc.vehicle_chassis_number"/>
+            </div>
+           
+        </xpath>
+    </template>
+</odoo>

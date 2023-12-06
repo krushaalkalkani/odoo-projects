@@ -12,6 +12,7 @@
         "views/vehicle_data.xml",
         "views/sale_view_order_form_inherit.xml",
         "views/menu.xml",
+        "views/vehicle_data_quotation_report.xml",
     ],
     'license': 'LGPL-3',
 }
