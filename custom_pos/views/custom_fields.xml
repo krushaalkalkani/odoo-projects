@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- tree view  -->
+    <record id="custom_field_list_view" model="ir.ui.view">
+        <field name="name">sale.field.list.view</field>
+        <field name="model">sale.location</field>
+        <field name="arch" type="xml">
+
+            <tree>
+                <field name="sale_location" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- form view  -->
+    <record id="custom_field_form_view" model="ir.ui.view">
+        <field name="name">custom.field.form.view</field>
+        <field name="model">sale.location</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <sheet>
+
+
+                    <field name="sale_location" />
+
+
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Action for main Menu -->
+    <record id="action_custom_field" model="ir.actions.act_window">
+        <field name="name">Sale Location</field>
+        <field name="res_model">sale.location</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="custom_menu"
+        name="Custom Module"
+        action="action_custom_field"
+    />
+
+
+</odoo>

@@ -1,0 +1,63 @@
+.font-weight-medium {
+  font-weight: 500;
+}
+
+.footer-logo {
+  height: 50px;
+  width: auto;
+}
+
+.explore-cities {
+  .img-container {
+    height: 100px;
+    width: 100px;
+    flex-shrink: 0;
+  }
+
+  .country-image {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.object-fit {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.new-properties {
+  .property-img-container {
+    height: 220px;
+  }
+}
+
+.our-services {
+  background-color: #eee;
+
+  .icon {
+    height: 70px;
+    width: 70px;
+
+    i {
+      font-size: 42px;
+    }
+  }
+}
+
+.custom-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+}
+.custom-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.custom-form label {
+  font-weight: bold;
+}

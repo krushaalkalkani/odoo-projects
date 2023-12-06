@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="website_task.main_template" name="Custom Page">
+        <t t-call="website.layout">
+
+            <!-- Slider -->
+            <section class="s_carousel_wrapper" data-vxml="001">
+                <t t-set="uniq" t-value="datetime.datetime.now().microsecond" />
+                <div t-attf-id="myCarousel{{uniq}}"
+                    class="s_carousel s_carousel_default carousel slide border border-primary shadow"
+                    data-bs-interval="10000">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li t-attf-data-bs-target="#myCarousel{{uniq}}" data-bs-slide-to="0"
+                            class="active"></li>
+                        <li t-attf-data-bs-target="#myCarousel{{uniq}}" data-bs-slide-to="1"></li>
+                        <li t-attf-data-bs-target="#myCarousel{{uniq}}" data-bs-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <!-- #01 -->
+                        <div class="carousel-item active oe_img_bg o_bg_img_center">
+                            <img src="/website_task/static/src/img/slide1.png" alt="Slide 1"
+                                class="d-block w-100" />
+                            <div class="container oe_unremovable"></div>
+                        </div>
+                        <!-- #02 -->
+                        <div class="carousel-item oe_img_bg o_bg_img_center">
+                            <img src="/website_task/static/src/img/slide2.png" alt="Slide 2"
+                                class="d-block w-100" />
+                            <div class="container oe_unremovable"></div>
+                        </div>
+                        <!-- #03 -->
+                        <div class="carousel-item oe_img_bg o_bg_img_center">
+                            <img src="/website_task/static/src/img/slide3.png" alt="Slide 3"
+                                class="d-block w-100" />
+                            <div class="container oe_unremovable"></div>
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="carousel-control-prev o_not_editable" contenteditable="false"
+                        t-attf-href="#myCarousel{{uniq}}" data-bs-slide="prev" role="button">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </a>
+                    <a class="carousel-control-next o_not_editable" contenteditable="false"
+                        t-attf-href="#myCarousel{{uniq}}" data-bs-slide="next" role="button">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </a>
+                </div>
+            </section>
+
+
+            <!-- Form -->
+            <div id='custom_form'>
+                <form id="school-form" method="post" action="/custom_page">
+                    <div class="form-group">
+
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+
+                    </div>
+                    <div class="container mt-5 mb-5">
+                        <div class="card border-primary custom-card p-4 shadow"
+                            style="max-width: 500px; margin: 0 auto;">
+                            <h2 class="mb-4 text-center">School Information</h2>
+                            <form>
+                                <div class="form-group">
+                                    <label for="school_name">School Name</label>
+                                    <input type="text" class="form-control"
+                                        id="school_name" name="school_name"
+                                        placeholder="Enter School Name" />
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="country_id">Country</label>
+                                        <select class="form-control" id="country_id"
+                                            name="country_id">
+                                            <option value="">Select Country</option>
+                                            <option value="1">India</option>
+                                            <option value="2">USA</option>
+                                            <!-- Add more country options as needed -->
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="state_id">State</label>
+                                        <select class="form-control" id="state_id"
+                                            name="state_id">
+                                            <option value="">Select State</option>
+                                            <option value="1">Delhi</option>
+                                            <option value="2">Gujarat</option>
+                                            <!-- Add more state options as needed -->
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <button id="submit" type="submit"
+                                    class="btn btn-primary btn-lg btn-block mt-3">
+                                    Submit
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </form>
+
+                <!-- popup  -->
+                <div class="modal fade custom-login-signup-modal" tabindex="-1" role="dialog"
+                    aria-labelledby="loginSignupModal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="loginSignupModal">Login or Sign Up</h5>
+                                <button type="button" class="close" data-dismiss="modal"
+                                    aria-label="Close">
+                                    <span aria-hidden="true">x</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-center">Please log in or sign up to access this
+                                    content.</p>
+                            </div>
+                            <div class="modal-footer justify-content-center">
+                                <button type="button" class="btn btn-primary login-button">Login</button>
+                                <button type="button" class="btn btn-secondary signup-button">Sign
+                                    Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </t>
+    </template>
+
+</odoo>

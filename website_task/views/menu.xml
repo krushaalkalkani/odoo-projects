@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+        id="website_root_menu"
+        name="Web Site Task" />
+
+    <menuitem
+        id="website_sub_menu"
+        name="Web Site Task"
+        action="action_website_profile"
+        parent="website_root_menu" />
+
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- tree view  -->
+    <record id="website_list_view" model="ir.ui.view">
+        <field name="name">website.list.view</field>
+        <field name="model">school.info</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="school_name" />
+                <field name="state_id" />
+                <field name="country_id" />
+                <field name="image" />
+            </tree>
+
+        </field>
+    </record>
+
+    <!-- Form view  -->
+    <record id="website_form_view" model="ir.ui.view">
+        <field name="name">website.form.view</field>
+        <field name="model">school.info</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="school_name" />
+                        <field name="state_id" />
+                        <field name="country_id" />
+                        <field name="image" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_website_profile" model="ir.actions.act_window">
+        <field name="name">Website Task</field>
+        <field name="res_model">school.info</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

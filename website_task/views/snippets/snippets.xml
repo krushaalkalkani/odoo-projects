@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="custom_snippets_school_info" inherit_id="website.snippets" name="Custom Snippets">
+        <xpath expr="//div[@id='snippet_structure']" position="before">
+            <div id="snippet_structure" class="o_panel">
+                <div class="o_panel_header">Krushal's Dynamic Template</div>
+                <div class="o_panel_body">
+                    <t t-snippet="website_task.school_info"
+                    >
+                        <keywords>explore, school</keywords>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>
