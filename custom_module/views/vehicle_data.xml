@@ -16,7 +16,7 @@
                     </group>
                 </sheet>
                 <footer>
-                    <button string="Add Vehicle Data" type="object" class="oe_highlight"
+                    <button string="Add Vehicle Details" type="object" class="oe_highlight"
                         name="add_vehicle_data" />
 
                 </footer>
