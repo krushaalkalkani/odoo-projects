@@ -16,9 +16,9 @@
                     </group>
                 </sheet>
                 <footer>
-                    <button string="Save Vehicle Details" type="object" class="oe_highlight"
+                    <button string="Add Vehicle Data" type="object" class="oe_highlight"
                         name="button_save_data" />
-                    
+
                 </footer>
             </form>
         </field>

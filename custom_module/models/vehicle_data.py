@@ -6,7 +6,6 @@ class AddVehicle(models.TransientModel):
 
     vehicle_part_number = fields.Char(string="Vehicle Part Number")
     licence_number = fields.Char(string="License Number")
-
     sale_order_ids = fields.Many2many(
         'sale.order', string='Related Sale Orders')
 
@@ -31,38 +30,14 @@ class AddVehicle(models.TransientModel):
         sale_order_id.is_add_vehicle_data = True
         return True
 
-        # self.save_data()
-        # print("Vehicle data saved!")
-
-        # for sale_order in self.sale_order_ids:
-        #     sale_order.write({
-        #         'vehicle_part_number': self.vehicle_part_number,
-        #         'licence_number': self.licence_number,
-        #     })
-
-        # print("Sale Order details updated!")
-
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    vehicle_part_number = fields.Char(
-        string="Vehicle Part Number",
-        store=True
-    )
-    licence_number = fields.Char(
-        string="License Number",
-        store=True
-    )
+    vehicle_part_number = fields.Char(string="Vehicle Part Number", store=True)
+    licence_number = fields.Char(string="License Number", store=True)
     is_add_vehicle_data = fields.Boolean(
         default=False, string="Is Add Vehicle Data?")
-
-    # vehicles_data_id = fields.Many2one('vehicles.data', string='Vehicles Data')
-
-    @api.onchange('vehicles_data_id')
-    def update_details_action(self):
-        if self.vehicles_data_id and self.env.user.is_vehicle_data_saved:
-            self.update_vehicle_data()
 
     @api.model
     def update_vehicle_data(self, vals):
@@ -76,11 +51,6 @@ class SaleOrder(models.Model):
             rec.is_add_vehicle_data = False
             sale_order_id = rec.id
 
-            return {
-
-            }
-
-    def button_update_vehicle_data(self):
         return {
             'name': 'Update Vehicle Data',
             'type': 'ir.actions.act_window',
@@ -88,6 +58,8 @@ class SaleOrder(models.Model):
             'view_mode': 'form',
             'view_id': self.env.ref('custom_module.vehicle_data_form_view').id,
             'target': 'new',
-            'context': {'default_vehicle_part_number': self.vehicle_part_number,
-                        'default_licence_number': self.licence_number},
+            'context': {
+                'default_vehicle_part_number': self.vehicle_part_number,
+                'default_licence_number': self.licence_number
+            },
         }

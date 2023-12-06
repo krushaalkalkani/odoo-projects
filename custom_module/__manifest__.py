@@ -10,8 +10,7 @@
     'data': [
         "security/ir.model.access.csv",
         "views/vehicle_data.xml",
-        "views/vehicle_details.xml",
-        "views/new_field.xml",
+        "views/sale_view_order_form_inherit.xml",
         "views/menu.xml",
     ],
     'license': 'LGPL-3',

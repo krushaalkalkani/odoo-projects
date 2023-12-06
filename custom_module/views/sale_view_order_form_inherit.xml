@@ -5,8 +5,8 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
+
             <xpath expr="//notebook" position="inside">
-                <!-- Add a new notebook page after the customer signature page -->
                 <page string="Vehicle Information">
                     <group>
                         <group>
@@ -18,6 +18,17 @@
                         </group>
                     </group>
                 </page>
+            </xpath>
+            <xpath expr="//form/header/button[position()=8]" position="after">
+                <button name="%(custom_module.action_vehicle_data)d" type="action"
+                    data-hotkey="v"
+                    string="Add Vehicle Info" class="btn-primary"
+                    attrs="{'invisible': [('is_add_vehicle_data', '!=', False)]}" />
+                <button
+                    name="button_update_vehicle_data"
+                    type="object"
+                    string="Update Details" class="oe_highlight" />
+
             </xpath>
         </field>
     </record>
