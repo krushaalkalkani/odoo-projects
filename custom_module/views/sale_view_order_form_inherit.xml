@@ -22,17 +22,15 @@
             <xpath expr="//form/header/button[position()=8]" position="after">
                 <button name="%(custom_module.action_vehicle_data)d" type="action"
                     data-hotkey="v"
-                    string="Add Vehicle Detils" class="btn-primary"
-                    attrs="{'invisible': [('is_add_vehicle_data', '!=', False)]}" />
+                    string="Add Vehicle Details" class="btn-primary"
+                    attrs="{'invisible': [('is_add_vehicle_data', '!=', False)]}"
+                />
                 <button
                     name="update_vehicle_data"
                     type="object"
-                    string="Update Vehicle Details" class="oe_highlight" />
+                    string="Update Vehicle Details" class="oe_highlight"
+                    attrs="{'invisible': [('is_add_vehicle_data', '=', False)]}" />
 
-            </xpath>
-            <xpath expr="//button[@name='action_confirm']" position="replace">
-                <button string="Confirm Sale" type="object" name="action_confirm_with_vehicle_data"
-                    class="oe_highlight" />
             </xpath>
         </field>
     </record>
