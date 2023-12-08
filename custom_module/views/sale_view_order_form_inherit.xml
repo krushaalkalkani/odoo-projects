@@ -30,6 +30,10 @@
                     string="Update Vehicle Details" class="oe_highlight" />
 
             </xpath>
+            <xpath expr="//button[@name='action_confirm']" position="replace">
+                <button string="Confirm Sale" type="object" name="action_confirm_with_vehicle_data"
+                    class="oe_highlight" />
+            </xpath>
         </field>
     </record>
 </odoo>

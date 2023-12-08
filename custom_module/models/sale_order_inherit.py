@@ -26,3 +26,21 @@ class SaleOrder(models.Model):
                 'default_vehicle_chassis_number': self.vehicle_chassis_number
             },
         }
+
+    def action_confirm_with_vehicle_data(self):
+        res = super(SaleOrder, self).action_confirm()
+        for order in self:
+            picking = order.picking_ids.filtered(lambda p: p.state == 'draft')
+            if picking:
+                picking.write({
+                    'vehicle_part_number': order.vehicle_part_number or "",
+                    'vehicle_chassis_number': order.vehicle_chassis_number or "",
+                })
+            else:
+                self.env['stock.picking'].create({
+                    'sale_id': order.id,
+                    'vehicle_part_number': order.vehicle_part_number or "",
+                    'vehicle_chassis_number': order.vehicle_chassis_number or "",
+                })
+
+        return res
