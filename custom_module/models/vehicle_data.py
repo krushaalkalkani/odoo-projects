@@ -10,7 +10,7 @@ class AddVehicle(models.TransientModel):
     def add_vehicle_data(self):
         context = dict(self._context)
         print(context, ">>>>>>>>>>>>>>>>>>>>hello")
-        order_id = context.get('params').get('id') or False
+        order_id = context.get('default_sale_order_id') or False
         sale_order_id = self.env['sale.order'].browse(order_id)
         sale_order_id.vehicle_part_number = self.vehicle_part_number or " "
         sale_order_id.vehicle_chassis_number = self.vehicle_chassis_number or ""

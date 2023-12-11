@@ -17,10 +17,12 @@
                             <field name="vehicle_chassis_number" readonly="0" />
                         </group>
                     </group>
+
                 </page>
             </xpath>
             <xpath expr="//form/header/button[position()=8]" position="after">
                 <button name="%(custom_module.action_vehicle_data)d" type="action"
+                    context="{'default_sale_order_id': active_id}"
                     data-hotkey="v"
                     string="Add Vehicle Details" class="btn-primary"
                     attrs="{'invisible': [('is_add_vehicle_data', '!=', False)]}"

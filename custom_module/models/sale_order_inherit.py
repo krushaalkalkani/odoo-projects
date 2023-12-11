@@ -2,10 +2,12 @@ from odoo import models, fields, api
 
 
 class SaleOrder(models.Model):
-    _inherit = 'sale.order'
+    _inherit = ['sale.order']
 
-    vehicle_part_number = fields.Char(string="Vehicle Part Number", store=True)
-    vehicle_chassis_number = fields.Char(string="License Number", store=True)
+    vehicle_part_number = fields.Char(
+        string="Vehicle Part Number", store=True, tracking=True)
+    vehicle_chassis_number = fields.Char(
+        string="License Number", store=True, tracking=True)
     is_add_vehicle_data = fields.Boolean(
         default=False, string="Is Add Vehicle Data?")
 
@@ -22,6 +24,7 @@ class SaleOrder(models.Model):
             'view_id': self.env.ref('custom_module.vehicle_data_form_view').id,
             'target': 'new',
             'context': {
+                'default_sale_order_id': self.id,
                 'default_vehicle_part_number': self.vehicle_part_number,
                 'default_vehicle_chassis_number': self.vehicle_chassis_number
             },
