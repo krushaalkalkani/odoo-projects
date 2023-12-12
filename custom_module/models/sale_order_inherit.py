@@ -15,6 +15,8 @@ class SaleOrder(models.Model):
         for rec in self:
             rec.is_add_vehicle_data = False
             sale_order_id = rec.id
+            
+            
 
         return {
             'name': 'Update Vehicle Data',
