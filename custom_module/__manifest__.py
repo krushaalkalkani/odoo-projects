@@ -9,6 +9,7 @@
     'depends': ['product', 'sale', 'stock'],
     'data': [
         "security/ir.model.access.csv",
+        "security/security_group.xml",
         "views/vehicle_data.xml",
         "views/sale_view_order_form_inherit.xml",
         'views/stock_picking_inherited.xml',

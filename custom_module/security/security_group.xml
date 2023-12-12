@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="vehicle_admin_group" model="res.groups">
+        <field name="name">Add/Update Vehicle details</field>
+
+    </record>
+
+
+</odoo>

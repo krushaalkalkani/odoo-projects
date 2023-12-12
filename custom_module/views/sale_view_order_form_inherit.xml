@@ -26,12 +26,15 @@
                     data-hotkey="v"
                     string="Add Vehicle Details" class="btn-primary"
                     attrs="{'invisible': [('is_add_vehicle_data', '!=', False)]}"
+                    groups='custom_module.vehicle_admin_group'
                 />
                 <button
                     name="update_vehicle_data"
                     type="object"
                     string="Update Vehicle Details" class="oe_highlight"
-                    attrs="{'invisible': [('is_add_vehicle_data', '=', False)]}" />
+                    attrs="{'invisible': [('is_add_vehicle_data', '=', False)]}"
+                    groups='custom_module.vehicle_admin_group'
+                />
 
             </xpath>
         </field>

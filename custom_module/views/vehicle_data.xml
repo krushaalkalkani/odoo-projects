@@ -17,7 +17,7 @@
                 </sheet>
                 <footer>
                     <button string="Add Vehicle Details" type="object" class="oe_highlight"
-                        name="add_vehicle_data" />
+                        name="add_vehicle_data" groups='custom_module.vehicle_admin_group' />
 
                 </footer>
             </form>
