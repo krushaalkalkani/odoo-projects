@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 vehicles_data_management,vehicles.data,model_vehicles_data,base.group_user,1,1,1,1
+insurance_details,insurance.details,model_insurance_details,base.group_user,1,1,1,1
+insurance_configuration,insurance.configuration,model_insurance_configuration,base.group_user,1,1,1,1

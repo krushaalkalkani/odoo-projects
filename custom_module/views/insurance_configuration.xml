@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="insurance_configuration_form_view" model="ir.ui.view">
+        <field name="name">insurance.configuration.form.view</field>
+        <field name="model">insurance.configuration</field>
+        <field name="arch" type="xml">
+
+            <form>
+                <sheet>
+                    <group>
+                        <field name="customer_name" />
+                    </group>
+
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="action_insurance_configuration_profile" model="ir.actions.act_window">
+        <field name="name">Insurance configuration</field>
+        <field name="res_model">insurance.configuration</field>
+        <field name="view_mode">form</field>
+    </record>
+
+
+</odoo>

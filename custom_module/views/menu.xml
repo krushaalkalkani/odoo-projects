@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <menuitem
-        id="vehicle_menu"
-        name="Vehicle details"
+        id="vehicle_data_details"
+        name="Vehicle Details"
         action="action_vehicle_data" />
+
+    <menuitem
+        id="insurance_lable_tag"
+        name="Insurance"
+        parent="sale.menu_sales_config" />
+
+    <menuitem
+        id="insurance_details_data"
+        name="Insurance Details"
+        action="custom_module.action_insurance_details_profile"
+        parent="insurance_lable_tag" />
+
+    <menuitem
+        id="insurance_configuration_data"
+        name="Insurance Configuration"
+        action="custom_module.action_insurance_configuration_profile"
+        parent="insurance_lable_tag" />
+
+
 </odoo>
